@@ -18,6 +18,12 @@ namespace SocialNetwork
             user1.AddFriend(user3);
             user1.PrintFriendList();
             user1.SayHello();
+
+            DateTime birthday = new DateTime(1985, 10, 17);
+            birthday = birthday.AddDays(1);
+            Console.WriteLine(birthday.DayOfWeek);
+
+            Console.WriteLine(birthday.ToString(System.Globalization.CultureInfo.InvariantCulture));
         }
     }
 }
