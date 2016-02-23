@@ -21,12 +21,31 @@ namespace SocialNetwork
                 _name = value;
             }
         }
+
+        public string Date { get; set; }
+
+        // Example 
+        //private string _abc;
+        //public string ABC
+        //{
+        //    get { return _abc; }
+        //    set
+        //    {
+        //        if (!String.IsNullOrEmpty(value))
+        //        {
+        //            _abc = value;
+        //        }
+        //    }
+        //}
+        // End Example 
+
         public List<Profile> Friends { get; set; }
 
-        public Profile(string name)
+        public Profile(string name, string date)
         {
             Name = name;
             Friends = new List<Profile>();
+            Date = date;
         }
 
         public void AddFriend(Profile friend)
@@ -44,7 +63,7 @@ namespace SocialNetwork
 
         public void SayHello()
         {
-            Console.WriteLine("Hello, my name is " + Name);
+            Console.WriteLine("Hello, my name is " + Name + " my birthday is " + Date);
         }
     }
 }
