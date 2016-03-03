@@ -40,11 +40,14 @@ namespace SocialNetwork
         // End Example 
 
         public List<Profile> Friends { get; set; }
+        public List<Profile> PendingFriendRequests { get; set; }
+        public List<Profile> IncomingFriendRequests { get; set; }
 
         public Profile(string name, string date)
         {
             Name = name;
             Friends = new List<Profile>();
+            PendingFriendRequests = new List<Profile>();
             Date = date;
         }
 
@@ -59,6 +62,25 @@ namespace SocialNetwork
             {
                 Console.WriteLine(friend.Name);
             }
+        }
+
+        public void RequestFriend(Profile friend)
+        {
+            PendingFriendRequests.Add(friend);
+            friend.IncomingFriendRequests.Add(this);
+        }
+
+        public void PrintPendingFriendRequests()
+        {
+            foreach (Profile friend in PendingFriendRequests)
+            {
+                Console.WriteLine(friend.Name);
+            }
+        }
+
+        public void PrintIncomingFriendRequests()
+        {
+            
         }
 
         public void SayHello()
